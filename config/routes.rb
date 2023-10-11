@@ -6,6 +6,7 @@ Rails.application.routes.draw do
           
   # READ
   get("/boards", { :controller => "boards", :action => "index" })
+  get("/", { :controller => "boards", :action => "index" })
   
   get("/boards/:path_id", { :controller => "boards", :action => "show" })
   
@@ -40,5 +41,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  #root "boards#index"
 end

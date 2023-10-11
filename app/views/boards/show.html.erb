@@ -1,8 +1,25 @@
 <div>
   <div>
     <h1>
-      Board #<%= @the_board.id %> details
+    <%= @the_board.name %> 
     </h1>
+<hr>
+
+<h2> Add a new post </h2>
+    <form action=""">
+      <div>
+      <label for = "input_title"> Title </label>
+      <input id = "input_title" type = "text" name = "query_title">
+      </div>
+      <label for = "body_box"> Body </title>
+      <textarea id = "body_box" name = "query_body"> </textarea>
+      </div>
+      <div>
+      <label for="expires_box"> Expires on </label>
+      <input id = "expires_box" type= "date" name = "query_expires_on">
+      <div>
+      <button> Add post </button>
+    </form>
 
     <div>
       <div>
