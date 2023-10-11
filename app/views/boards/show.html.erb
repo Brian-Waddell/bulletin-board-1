@@ -20,20 +20,19 @@
       <div>
       <button> Add post </button>
     </form>
+    <hr>
 
-    <div>
-      <div>
-        <a href="/boards">
-          Go back
-        </a>
-      </div>
-
-      <div>
-        <a href="/delete_board/<%= @the_board.id %>">
-          Delete board
-        </a>
-      </div>
-    </div>
+    <h2> Active post </h2>
+    <table border = 1 >
+      <tbody>
+        <tr>
+          <th> Title </th>
+          <th> Body </th>
+          <th> Posted on </th>
+          <th> Expires on </th> 
+        </tr>
+      </tbody>
+    </table>
 
     <dl>
       <dt>
