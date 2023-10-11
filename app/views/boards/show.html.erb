@@ -21,11 +21,26 @@
       <button> Add post </button>
     </form>
     <hr>
+     
 
     <h2> Active post </h2>
     <table border = 1 >
       <tbody>
         <tr>
+          <th> Title </th>
+          <th> Body </th>
+          <th> Posted on </th>
+          <th> Expires on </th> 
+        </tr>
+        <tr>
+          
+      </tbody>
+    </table>
+
+   <h2> Expired Post </h2>
+    <table border = 1 >
+      <tbody>
+      <tr>
           <th> Title </th>
           <th> Body </th>
           <th> Posted on </th>
@@ -62,26 +77,3 @@
 <hr>
 
 
-<div>
-  <div>
-    <h2>
-      Edit board
-    </h2>
-
-    <form action="/modify_board/<%= @the_board.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
-
-        <input type="text" id="name_box" name="query_name" value="<%= @the_board.name %>">
-      </div>
-
-      <button>
-        Update board
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
