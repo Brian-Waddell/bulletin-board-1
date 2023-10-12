@@ -39,16 +39,39 @@
           <th> Posted on </th>
           <th> Expires on </th> 
         </tr>
-    <% @posts.each do |post| %>
+    <% @active_posts.each do |post| %>
    <tr>
           <td> <%= post.title %> </td>
           <td> <%= post.body %> </td>
           <td> <%= post.created_at.strftime("%b %e, %y") %> </td>
           <td> <%= post.expires_on.strftime("%b %e, %y") %> </td>
           
-          
-         
+    </tr>
+    <% end %>
+      </tbody>
+    </table>
+
+<h2> Expired Post </h2>
+
+<table border = 1 >
+      <tbody>
+        <tr>
+          <th> Title </th>
+          <th> Body </th>
+          <th> Posted on </th>
+          <th> Expires on </th> 
         </tr>
+  
+  <%# old_posts = Post.where({ :expires_on => @the_post.expires_on }) %>
+   
+    <% @expired_post.each do |post| %>
+   <tr>
+          <td> <%= post.title %> </td>
+          <td> <%= post.body %> </td>
+          <td> <%= post.created_at.strftime("%b %e, %y") %> </td>
+          <td> <%= post.expires_on.strftime("%b %e, %y") %> </td>
+          
+    </tr>
     <% end %>
       </tbody>
     </table>
