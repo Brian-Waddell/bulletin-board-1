@@ -20,7 +20,7 @@
       </div>
       <div>
       <label for="board_id_box"> </label>
-      <input id = "board_id_box" type= "hidden" name = "query_board_id" value = <%= @the_board.id%>>
+      <input id = "board_id_box" type= "hidden" name = "query_board_id" value = "<%= @the_board.id%>" >
       </div>
       <button> Add post </button>
     </form>
@@ -28,8 +28,6 @@
 
  <hr>
     
-   
-
     <h2> Active posts </h2>
     <table border = 1 >
       <tbody>
@@ -43,8 +41,8 @@
    <tr>
           <td> <%= post.title %> </td>
           <td> <%= post.body %> </td>
-          <td> <%= post.created_at.strftime("%b %e, %y") %> </td>
-          <td> <%= post.expires_on.strftime("%b %e, %y") %> </td>
+          <td> <%= post.created_at.strftime("%b %e, %Y") %> </td>
+          <td> <%= post.expires_on.strftime("%b %e, %Y") %> </td>
           
     </tr>
     <% end %>
@@ -68,8 +66,8 @@
    <tr>
           <td> <%= post.title %> </td>
           <td> <%= post.body %> </td>
-          <td> <%= post.created_at.strftime("%b %e, %y") %> </td>
-          <td> <%= post.expires_on.strftime("%b %e, %y") %> </td>
+          <td> <%= post.created_at.strftime("%b %e, %Y") %> </td>
+          <td> <%= post.expires_on.strftime("%b %e, %Y") %> </td>
           
     </tr>
     <% end %>
