@@ -1,36 +1,36 @@
 <div>
-  <div>
     <h1>
     <%= @the_board.name %> 
     </h1>
+</div>
 <hr>
-
-
 <h2> Add a new post </h2>
-    <form action="/insert_post" methpd = "post">
+<form action="/insert_post" method = "post">
       <div>
       <label for = "input_title"> Title </label>
       <input id = "input_title" type = "text" name = "query_title">
       </div>
+      <div>
       <label for = "body_box"> Body </title>
       <textarea id = "body_box" name = "query_body"> </textarea>
       </div>
       <div>
       <label for="expires_box"> Expires on </label>
       <input id = "expires_box" type= "date" name = "query_expires_on">
-      <div>
+      </div>
       <div>
       <label for="board_id_box"> Board ID </label>
       <input id = "board_id_box" type= "text" name = "query_board_id">
-      <div>
+      </div>
       <button> Add post </button>
     </form>
-    <hr>
+
+
+ <hr>
     
-    <% matching_post = Post.where({ :board_id => @the_board.id })%>
-    <% matching_post.each do |a_post| %>
+   
 
-    <h2> Active post </h2>
+    <h2> Active posts </h2>
     <table border = 1 >
       <tbody>
         <tr>
@@ -39,50 +39,16 @@
           <th> Posted on </th>
           <th> Expires on </th> 
         </tr>
-
-        
-        <tr>
-          <td> 
-        </tr>
+    <% @posts.each do |post| %>
+   <tr>
+          <td> <%= post.title %> </td>
+          <td> <%= post.body %> </td>
+          <td> <%= post.created_at %> </td>
+          <td> <%= post.expires_on %> </td>
           
-      </tbody>
-    </table>
-
-   <h2> Expired Post </h2>
-    <table border = 1 >
-      <tbody>
-      <tr>
-          <th> Title </th>
-          <th> Body </th>
-          <th> Posted on </th>
-          <th> Expires on </th> 
+          
+         
         </tr>
+    <% end %>
       </tbody>
     </table>
-
-    <dl>
-      <dt>
-        Name
-      </dt>
-      <dd>
-        <%= @the_board.name %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_board.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_board.updated_at) %> ago
-      </dd>
-    </dl>
-  </div>
-</div>
-
-<hr>

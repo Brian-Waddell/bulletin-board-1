@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_post", { :controller => "posts", :action => "create" })
-  get("/insert_post", { :controller => "posts", :action => "create" })
+ 
           
   # READ
   get("/posts", { :controller => "posts", :action => "index" })

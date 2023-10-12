@@ -12,7 +12,9 @@ class BoardsController < ApplicationController
 
     matching_boards = Board.where({ :id => the_id })
 
-    @the_board = matching_boards.at(0)
+    @the_board = matching_boards.first
+
+     @posts = Post.where({ :board_id => @the_board.id }).order({:expires_on => :asc})
 
     render({ :template => "boards/show" })
   end
